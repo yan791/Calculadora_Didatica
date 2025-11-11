@@ -18,3 +18,17 @@ start:
     invoke StdIn, addr buffer, 20
     invoke ExitProcess, 0
 end start
+
+.data
+    numero dd ?
+    fmtInt db "Número em decimal: %d", 10, 0
+
+.code
+start:
+    invoke StdOut, addr msgEntrada
+    invoke StdIn, addr buffer, 20
+    invoke atodw, addr buffer
+    mov numero, eax
+    invoke crt_printf, addr fmtInt, numero
+    invoke ExitProcess, 0
+end start
