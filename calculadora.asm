@@ -32,3 +32,33 @@ start:
     invoke crt_printf, addr fmtInt, numero
     invoke ExitProcess, 0
 end start
+
+;
+.data
+    fmtBin db "Binário: %s", 10, 0
+    binario db 33 dup(0)
+
+.code
+BinToStr proc valor:DWORD, buffer:PTR BYTE
+    mov ecx, 32
+    mov ebx, valor
+    mov edi, buffer
+loopBin:
+    shl ebx, 1
+    jc bit1
+    mov al, '0'
+    jmp gravar
+bit1:
+    mov al, '1'
+gravar:
+    mov [edi], al
+    inc edi
+    loop loopBin
+    mov byte ptr [edi], 0
+    ret
+BinToStr endp
+
+start:
+    ...
+    invoke BinToStr, numero, addr binario
+    invoke crt_printf, addr fmtBin, addr binario
