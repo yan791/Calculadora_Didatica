@@ -1,5 +1,4 @@
 ###############################################################
-# DISCIPLINA: Organização e Arquitetura de Computadores
 # AUTOR: Yan Ribeiro Nunes
 # EMAIL: yrn@cesar.school
 # Data: 13/11/2025
