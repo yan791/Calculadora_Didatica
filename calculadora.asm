@@ -1,3 +1,11 @@
+###############################################################
+# DISCIPLINA: Organização e Arquitetura de Computadores
+# AUTOR: Yan Ribeiro Nunes
+# EMAIL: yrn@cesar.school
+# Data: 13/11/2025
+# Hora: 14:35
+###############################################################
+
 .data
 msg_inicial: .asciiz "Digite um número decimal: "
 msg_saida:   .asciiz "\nNúmero lido: "
